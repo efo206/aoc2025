@@ -1,13 +1,10 @@
-inp = open("day2/day2.in").readlines()[0].split(",")
-ranges = []
-for r in inp: ranges.append(r.split("-"))
+ranges = [r.split("-") for r in open("day2/day2.in").readlines()[0].split(",")]
 repeats = 0
 
 for r in ranges:
     for num in range(int(r[0]), int(r[1])+1):
-        n = str(num)
-        l = int(len(n)/2)
-        if n[:l] == n[l:]:
+        l = int(len(str(num))/2)
+        if str(num)[:l] == str(num)[l:]:
             repeats += num
 
 print(repeats)
