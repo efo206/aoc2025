@@ -1,4 +1,4 @@
-inp = open("day1.in").readlines()
+inp = open("day1/day1.in").readlines()
 # cleanup
 for i, line in enumerate(inp):
     inp[i] = line[:-1]
