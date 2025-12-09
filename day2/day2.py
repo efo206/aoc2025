@@ -1,3 +1,5 @@
+from time import time
+
 ranges = [r.split("-") for r in open("day2/day2.in").readlines()[0].split(",")]
 repeats = 0
 
@@ -10,9 +12,7 @@ for r in ranges:
 print(repeats)
 
 
-# part 2, highly inefficient it seems
-exclude = []
-
+# part 2
 for r in ranges:
     for num in range(int(r[0]), int(r[1])+1):
         s = str(num)
@@ -29,8 +29,8 @@ for r in ranges:
                             splits.append(split)
                             phantom = phantom[i:]
                     if len(set(splits)) == 1: 
-                        exclude.append(num)
                         repeats += num
+                        break
 
 print(repeats)
 
